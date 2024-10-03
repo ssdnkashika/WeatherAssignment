@@ -33,7 +33,7 @@ body {
 .app-main {
   min-height: 35vh;
   width: 30vw;
-  margin: 50px auto; /* Centered margin */
+  margin: 20px auto; /* Centered margin */
   padding: 40px;
   text-align: center; /* Center all text inside app-main */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
