@@ -25,7 +25,7 @@ const App = () => {
   const getWeatherByCity = async (city) => {
     setError(""); // Clear previous error
     try {
-      const response = await axios.get(`http://localhost:3000/api/weather?city=${city}`);
+      const response = await axios.get(`https://weather-assignment-plum.vercel.app/api/weather?city=${city}`);
       setWeatherData(response.data);
       changeBg(response.data.weather[0].main); // Call to change background
     } catch (err) {
@@ -39,7 +39,7 @@ const App = () => {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
         try {
-          const response = await axios.get(`http://localhost:3000/api/weather?lat=${latitude}&lon=${longitude}`);
+          const response = await axios.get(`https://weather-assignment-plum.vercel.app/api/weather?lat=${latitude}&lon=${longitude}`);
           setWeatherData(response.data);
           changeBg(response.data.weather[0].main); // Call to change background
         } catch (err) {
