@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://weather-assignment-mu.vercel.app'], // Add both origins here
+  origin: 'http://localhost:5173' // Add both origins here
 })); // Enable CORS for the specified origins
 app.use(express.json());
 
