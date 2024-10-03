@@ -8,8 +8,9 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://weather-assignment-5xmn.vercel.app'], // Add both origins here
-})); // Enable CORS for the specified origins
+  origin: '*', // Allow all origins temporarily
+}));
+// Enable CORS for the specified origins
 app.use(express.json());
 
 const weatherApiKey = process.env.OPENWEATHER_API_KEY;
