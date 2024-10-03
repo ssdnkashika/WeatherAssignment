@@ -25,7 +25,7 @@ const App = () => {
   const getWeatherByCity = async (city) => {
     setError(""); // Clear previous error
     try {
-      const response = await axios.get(`http://weather-assignment-mu.vercel.app/api/weather?city=${city}`);
+      const response = await axios.get(`http://localhost:3000/api/weather?city=${city}`);
       setWeatherData(response.data);
       changeBg(response.data.weather[0].main); // Call to change background
     } catch (err) {

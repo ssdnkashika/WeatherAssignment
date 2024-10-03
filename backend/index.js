@@ -1,17 +1,23 @@
 const express = require('express');
 const axios = require('axios');
 const dotenv = require('dotenv');
-const cors = require('cors'); // Import CORS
+const cors = require('cors'); // Import the cors package
 
+// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:5173' // Replace with your frontend's origin
-}));
+  origin: ['http://localhost:5173', 'https://weather-assignment-mu.vercel.app'], // Add both origins here
+})); // Enable CORS for the specified origins
 app.use(express.json());
 
 const weatherApiKey = process.env.OPENWEATHER_API_KEY;
+
+// Root route to handle GET requests to /
+app.get('/', (req, res) => {
+  res.send('Welcome to the Weather API!'); // You can customize this message
+});
 
 // Route to get weather data
 app.get('/api/weather', async (req, res) => {
@@ -28,7 +34,7 @@ app.get('/api/weather', async (req, res) => {
 });
 
 // Start the server and log a message
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
